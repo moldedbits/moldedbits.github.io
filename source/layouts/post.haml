@@ -1,0 +1,69 @@
+= wrap_layout :layout do
+  %header.main-header.post-head{cover}
+    %nav.main-nav.clearfix{class: cover? ? 'overlay' : nil}
+      - if blog_settings.logo.present?
+        %a.blog-logo{href: home_path}
+          = image_tag blog_settings.logo, alt: blog_settings.name
+      - if blog_settings.navigation
+        %a.menu-button.icon-menu{href: '#'}
+          %span.word Menu
+
+  %main.content{role: :main}
+    %article.post
+      %header.post-header
+        %h1.post-title= current_article.title
+        %section.post-meta
+          %time.post-date{datetime: current_article.date.strftime('%Y-%m-%d')}
+            = current_article.date.strftime(blog_settings.date_format)
+          - if tags?
+            on #{tags}
+
+      %section.post-content= yield
+
+      %footer.post-footer
+        - if gravatar?
+          %figure.author-image
+            %a.img{href: author_path, style: "background-image: url(#{gravatar})"}
+              %span.hidden #{blog_author.name}'s Picture
+        %section.author
+          %h4
+            %a{href: author_path}= blog_author.name
+
+          %p
+          - if blog_author.bio.present?
+            = blog_author.bio
+          - else
+            Read
+            %a{href: author_path} more posts
+            by this author.
+
+          - if blog_author.location.present? || blog_author.website.present?
+            .author-meta
+              - if blog_author.location.present?
+                %span.author-location.icon-location= blog_author.location
+              - if blog_author.website.present?
+                %span.author-link.icon-link
+                  %a{href: blog_author.website}= blog_author.website
+
+        %section.share
+          %h4 Share this post
+          %a.icon-twitter{href: twitter_url, onclick: "window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"}
+            %span.hidden Twitter
+          %a.icon-facebook{href: facebook_url, onclick: "window.open(this.href, 'facebook-share','width=580,height=296');return false;"}
+            %span.hidden Facebook
+          %a.icon-google-plus{href: google_plus_url, onclick: "window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"}
+            %span.hidden Google+
+
+  %aside.read-next
+    - if prev_article = current_article.previous_article
+      - attributes = { href: prev_article.url }.merge(cover(prev_article))
+      %a.read-next-story{attributes}
+        %section.post
+          %h2= prev_article.title
+          %p #{read_next_summary(prev_article, 19)}&hellip;
+    - if next_article = current_article.next_article
+      - attributes = { href: next_article.url }.merge(cover(next_article))
+      %a.read-next-story.prev{attributes}
+        %section.post
+          %h2= next_article.title
+          %p #{read_next_summary(next_article, 19)}&hellip;
