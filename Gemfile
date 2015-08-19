@@ -15,3 +15,4 @@ gem 'redcarpet', '~> 3.3.2'
 
 # For "summary"-Helper
 gem 'nokogiri', '~> 1.6.6.2'
+gem 'middleman-deploy', '~> 1.0'

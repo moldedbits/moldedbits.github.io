@@ -40,14 +40,14 @@ activate :directory_indexes
 set :casper, {
   blog: {
     url: 'http://www.example.com',
-    name: 'Middleman',
-    description: 'Makes developing websites simple.',
+    name: 'Moldedbits',
+    description: 'We make amazingly beautiful iOS and android Apps.',
     date_format: '%d %B %Y',
     navigation: true,
     logo: nil # Optional
   },
   author: {
-    name: 'Middleman',
+    name: 'Moldedbits',
     bio: nil, # Optional
     location: nil, # Optional
     website: nil, # Optional
