@@ -1,0 +1,15 @@
+= wrap_layout :layout do
+  %header.main-header.post-head{cover}
+    %nav.main-nav.clearfix{class: cover? ? 'overlay' : nil}
+      - if blog_settings.logo.present?
+        %a.blog-logo{href: home_path}
+          = image_tag blog_settings.logo, alt: blog_settings.name
+      - if blog_settings.navigation
+        %a.menu-button.icon-menu{href: '#'}
+          %span.word Menu
+
+  %main.content{role: :main}
+    %article.post
+      %header.post-header
+        %h1.post-title= current_page.data.title
+      %section.post-content= yield
