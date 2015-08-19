@@ -5,7 +5,7 @@
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
   <channel>
-    <title>Your New Jekyll Site</title>
+    <title>Moldedbits</title>
     <link>blog url</link>
     <description>Blogging about stuffs</description>
     <pubDate>Sun, 10 Nov 2013 15:48:00 +0530</pubDate>
