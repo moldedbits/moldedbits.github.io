@@ -1003,6 +1003,7 @@ body:not(.post-template) .post-title {
 
 /* Add a box shadow to on hover */
 .subscribe:hover {
+    color: rgba(0,0,0,0.05);
     box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
     transition: box-shadow 0.25s;
 }
