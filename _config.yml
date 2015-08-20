@@ -1,5 +1,6 @@
 name: moldedbits
 description: Blog
+tagline: Our thoughts on mobile, code and everything under the sun.
 meta_description: "moldedbits Blog"
 
 markdown: redcarpet
