@@ -5,19 +5,18 @@
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
   <channel>
-    <title>Moldedbits</title>
-    <link>blog url</link>
-    <description>RSS feed for Moldedbits</description>
-    <pubDate>Sun, 10 Nov 2013 15:48:00 +0530</pubDate>
+    <title>moldedbits</title>
+    <link>moldedbits.github.io</link>
+    <description>Blog</description>
+    <pubDate>Thu, 20 Aug 2015 16:41:11 +0530</pubDate>
     <item>
-      <title>Welcome to Jekyll!</title>
-      <link>blog url/thriller/comedy/horror/2013/11/10/welcome-to-jekyll.html</link>
-      <description>&lt;p&gt;You&amp;#39;ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
-To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
+      <title>Hello World!</title>
+      <link>moldedbits.github.io/technical/android/2015/08/20/hello-world.html</link>
+      <description>&lt;p&gt;Hello World!&lt;/p&gt;
 </description>
-      <pubDate>Sun, 10 Nov 2013 15:48:00 +0530</pubDate>
-      <dc:date>2013-11-10T15:48:00+05:30</dc:date>
+      <pubDate>Thu, 20 Aug 2015 16:41:11 +0530</pubDate>
+      <dc:date>2015-08-20T16:41:11+05:30</dc:date>
     </item>
-    <dc:date>2013-11-10T15:48:00+05:30</dc:date>
+    <dc:date>2015-08-20T16:41:11+05:30</dc:date>
   </channel>
 </rss>

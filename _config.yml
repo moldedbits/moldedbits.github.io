@@ -1,15 +1,15 @@
-name: Moldedbits
-description: 
-meta_description: ""
+name: moldedbits
+description: Blog
+meta_description: "moldedbits Blog"
 
 markdown: redcarpet
 highlighter: pygments
 logo: false
 paginate: 15
 baseurl: /
-domain_name: 'http://yourblog-domain.com'
+domain_name: 'http://moldedbits.github.io'
 google_analytics: 'UA-XXXXXXXX-X'
 
 # Details for the RSS feed generator
-url:            'blog url'
-author:         'Your Name'
+url:            'moldedbits.github.io'
+author:         'Anuj Middha'
