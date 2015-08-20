@@ -1,6 +1,6 @@
-name: MoldedBits
+name: moldedbits
 description: Blog
-meta_description: "MoldedBits Blog"
+meta_description: "moldedbits Blog"
 
 markdown: redcarpet
 highlighter: pygments
@@ -12,4 +12,4 @@ google_analytics: 'UA-XXXXXXXX-X'
 
 # Details for the RSS feed generator
 url:            'moldedbits.github.io'
-author:         'Your Name'
+author:         'Anuj Middha'
