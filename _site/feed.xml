@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>moldedbits</title>
+		<description>Blog</description>		
+		<link>http://moldedbits.github.io</link>
+		<atom:link href="http://moldedbits.github.io/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Hello World!</title>
+				        
+				
+					<description>&lt;p&gt;Hello World!&lt;/p&gt;
+</description>
+				
+				<pubDate>Thu, 20 Aug 2015 16:41:11 +0530</pubDate>
+				<link>http://moldedbits.github.io/technical/android/2015/08/20/hello-world.html</link>
+				<guid isPermaLink="true">http://moldedbits.github.io/technical/android/2015/08/20/hello-world.html</guid>
+			</item>
+		
+	</channel>
+</rss>
