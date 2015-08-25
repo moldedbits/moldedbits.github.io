@@ -59,6 +59,10 @@
 
         $(".scroll-down").arctic_scroll();
 
+        $("#header").click(function(){
+          window.location.href = 'http://www.moldedbits.com';
+        });
+
     });
 
     // smartresize
