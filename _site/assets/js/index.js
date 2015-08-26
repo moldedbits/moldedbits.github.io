@@ -58,6 +58,12 @@
         $(window).smartresize(casperFullImg);
 
         $(".scroll-down").arctic_scroll();
+
+        $("#header").click(function(){
+           // navigate to new page
+            window.location.href = 'http://www.moldedbits.com';
+        });
+
     });
 
     // smartresize
