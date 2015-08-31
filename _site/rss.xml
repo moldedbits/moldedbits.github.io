@@ -8,15 +8,32 @@
     <title>moldedbits</title>
     <link>http://moldedbits.github.io</link>
     <description>Blog</description>
-    <pubDate>Thu, 20 Aug 2015 16:41:11 +0530</pubDate>
+    <pubDate>Mon, 31 Aug 2015 21:27:00 +0530</pubDate>
     <item>
-      <title>Hello World!</title>
-      <link>http://moldedbits.github.io/technical/android/2015/08/20/hello-world.html</link>
-      <description>&lt;p&gt;Hello World!&lt;/p&gt;
+      <title>Android gitignore</title>
+      <link>http://moldedbits.github.io/technical/android/2015/08/31/android-gitignore.html</link>
+      <description>&lt;p&gt;Sharing the gitignore we use with all our Android projects. All local configurations go in local.properties&lt;/p&gt;
 </description>
-      <pubDate>Thu, 20 Aug 2015 16:41:11 +0530</pubDate>
-      <dc:date>2015-08-20T16:41:11+05:30</dc:date>
+      <pubDate>Mon, 31 Aug 2015 21:27:00 +0530</pubDate>
+      <dc:date>2015-08-31T21:27:00+05:30</dc:date>
     </item>
-    <dc:date>2015-08-20T16:41:11+05:30</dc:date>
+    <item>
+      <title>Bumble Released.</title>
+      <link>http://moldedbits.github.io/technical/android/2012/03/27/bumble-released.html</link>
+      <description>&lt;p&gt;Yep, its finally out on the Android Market.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 27 Mar 2012 16:41:11 +0530</pubDate>
+      <dc:date>2012-03-27T16:41:11+05:30</dc:date>
+    </item>
+    <item>
+      <title>Bumble</title>
+      <link>http://moldedbits.github.io/technical/android/2012/02/25/bumble.html</link>
+      <description>&lt;p&gt;After a month of hard work, we are ready with the beta version of our
+first game for Android, Bumble.&lt;/p&gt;
+</description>
+      <pubDate>Sat, 25 Feb 2012 16:41:11 +0530</pubDate>
+      <dc:date>2012-02-25T16:41:11+05:30</dc:date>
+    </item>
+    <dc:date>2015-08-31T21:27:00+05:30</dc:date>
   </channel>
 </rss>
