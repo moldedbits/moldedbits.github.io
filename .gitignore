@@ -16,3 +16,7 @@
 
 # Ignore .DS_store file
 .DS_Store
+
+# Ignore generated files
+_site/
+.jekyll-metadata
