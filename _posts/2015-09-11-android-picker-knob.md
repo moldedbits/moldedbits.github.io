@@ -6,11 +6,11 @@ author: anuj
 categories: Technical Android
 ---
 
-In a game we are building, we needed a custom widget that looks like the volume control knob of old.
+In a game we are building, we needed a custom widget that looks like the classic volume control knob.
 
 ![Picker knob][screenshot]
 
-We went ahead and built a custom view for this. The view itself is available as a library [here][github-page]. Below is a brief description of the creation process.
+We went ahead and built a custom view for this. The view itself is available as a [library][github-page]. Below is a brief description of the creation process.
 
 #### Custom or Compound view?
 Android provides a wide array of widgets that can be combined to create most UI elements. It is always a good idea to reuse existing widgets in a [Compound View][compound-view] if possible. For the picker knob, existing widgets were not ideal. Custom view it was then.
@@ -18,7 +18,7 @@ Android provides a wide array of widgets that can be combined to create most UI 
 #### Strategy
 
 __Mathematics__
-To get realistic physics and behavior, we visualized a strip of equidistant markers wound on a circular dial. Based on the current rotation, the view identifies the markers on the front half of the dial, projects them on a 1-d space (the lins AB in the diagram below) and draws them on the screen.
+To get realistic physics and behavior, we visualized a strip of equidistant markers wound on a circular dial. Based on the current rotation, the view identifies the markers on the front half of the dial, projects them on a 1-d space (the line AB in the diagram below) and draws them on the screen.
 
 ![Piker knob mathematics][picker-knob-mathematics]
 
@@ -71,7 +71,7 @@ With this, we get a nice looking dial to work with.
 
 __Step 2 - User specified width and height__
 
-Update onMeasure to respect user specified width and height.
+Update ```onMeasure``` to respect user specified width and height.
 
 ```Java
 @Override
@@ -113,7 +113,7 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
 __Step 3 - Add rotation__
 
-Next, we want to add rotation to it. We'll have to update the onDraw method for this.
+Next, we want to add rotation to it. We'll have to update the ```onDraw``` method for this.
 
 ```Java
 @Override
@@ -143,7 +143,7 @@ protected void onDraw(Canvas canvas) {
 
 __Step 4 - Add touch handling__
 
-To handle touch events, we'll override the onTouchEvent method.
+To handle touch events, we'll override the ```onTouchEvent``` method.
 
 ```Java
 @Override
@@ -172,7 +172,7 @@ public boolean onTouchEvent(@NonNull MotionEvent event) {
 }
 ```
 
-In startTouch, we will remove any previous running motions. In startScrollIfNeeded, we will check when the user has moved her finger by more than a threshold value, and then start processing the touch events. In processTouch, we will update the rotation as the user moves her finger. As soon as the user lifts the finger, we will calculate the velocity of the fling and give that velocity to our view. The complete code is available [here][picker-knob-java]
+In ```startTouch```, we will remove any previous running motions. In ```startScrollIfNeeded```, we will check when the user has moved her finger by more than a threshold value, and then start processing the touch events. In ```processTouch```, we will update the rotation as the user moves her finger. As soon as the user lifts the finger, we will calculate the velocity of the fling and give that velocity to our view. The complete code is available [here][picker-knob-java]
 
 __Step 5 - Make it customizable__
 
