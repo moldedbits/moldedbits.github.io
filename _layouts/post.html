@@ -63,12 +63,16 @@ post_class: post-template
         <footer class="post-footer">
             <!-- If we want to display author's name and bio -->
             {% if page.author %}
+                {% assign author = site.data.people[page.author] %}
                 <figure class="author-image">
-                    <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.png)">
-                    <span class="hidden">{{site.author}}'s Picture</span></a>
+                    <a class="img" href="{{ site.baseurl }}" style="background-image:
+                      {% if author.image %}   url(/assets/images/people/{{author.image}})
+                      {% else %}
+                      url(/assets/images/profile.png)
+                      {% endif %}">
+                    <span class="hidden">{{author.name}}'s Picture</span></a>
                 </figure>
                 <section class="author">
-                    {% assign author = site.data.people[page.author] %}
                     <!-- Author Name -->
                     <h4> {{ author.name }} </h4>
                     <!-- Author Bio -->
