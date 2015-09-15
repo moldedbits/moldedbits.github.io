@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Playing with Git in Ruby"
+title:  "Accessing Git APIs in Ruby"
 date:   2015-09-15 11:11:11
 author: amit
 categories: Technical Ruby
@@ -213,6 +213,10 @@ file.close
 
 You can get more details about this gem on the Github repo of [Rugged][3ecfc539].
 Rubydoc for the same is available at [Rugged Doc][0fad1dd5].
+
+Happy coding!
+
+The moldedbits Team
 
   [0fad1dd5]: http://www.rubydoc.info/github/libgit2/rugged "Rugged Doc"
   [bf9bf480]: https://github.com/mojombo/grit/ "Grit"
