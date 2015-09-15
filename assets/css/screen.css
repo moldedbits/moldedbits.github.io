@@ -477,8 +477,7 @@ margin on the iframe, cause it breaks stuff. */
     cursor: pointer;
     margin-bottom: 5rem;
     text-align: center;
-    background: #222 no-repeat center center;
-    background-size: cover;
+    background: #206EB5 url("/assets/images/squares.png") repeat scroll 0 0;
     overflow: hidden;
 }
 
