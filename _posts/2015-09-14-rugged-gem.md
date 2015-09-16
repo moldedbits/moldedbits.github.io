@@ -5,7 +5,18 @@ date:   2015-09-15 11:11:11
 author: amit
 categories: Technical Ruby
 ---
-Without a doubt we all know that Git is one of the most famous version control system. Here at moldedbits we use [Github][5c4dd6b1] for each of our project. Some uses git directly from command line, while some using some GUI tool like [SourceTree][c30c4e2e].
+  [0fad1dd5]: http://www.rubydoc.info/github/libgit2/rugged "Rugged Doc"
+  [bf9bf480]: https://github.com/mojombo/grit/ "Grit"
+  [712a3aeb]: http://www.saintsjd.com/2011/01/what-is-a-bare-git-repository/ "bare"
+  [3ecfc539]: https://github.com/libgit2/rugged "Rugged"
+  [5f46323f]: https://github.com/libgit2/libgit2 "libgit2"
+  [7199ea7a]: https://github.com/libgit2/libgit2 "libgit2"
+  [09f9859e]: https://github.com/libgit2/libgit2#language-bindings "libgit2-bindings"
+  [21fa2960]: https://github.com/mojombo/grit/ "Grit Gem"
+  [github]: https://github.com "GitHub"
+  [sourcetree]: https://www.sourcetreeapp.com "Source Tree"
+Without a doubt we all know that Git is one of the most famous version control system. Here at moldedbits we use [GitHub][github] for each of our project. Some use git directly from command line, while other prefer GUI tools like [SourceTree][sourcetree].
+
 
 ### We all know this. Tell me something new.
 
@@ -217,14 +228,3 @@ Rubydoc for the same is available at [Rugged Doc][0fad1dd5].
 Happy coding!
 
 The moldedbits Team
-
-  [0fad1dd5]: http://www.rubydoc.info/github/libgit2/rugged "Rugged Doc"
-  [bf9bf480]: https://github.com/mojombo/grit/ "Grit"
-  [712a3aeb]: http://www.saintsjd.com/2011/01/what-is-a-bare-git-repository/ "bare"
-  [3ecfc539]: https://github.com/libgit2/rugged "Rugged"
-  [5f46323f]: https://github.com/libgit2/libgit2 "libgit2"
-  [7199ea7a]: https://github.com/libgit2/libgit2 "libgit2"
-  [09f9859e]: https://github.com/libgit2/libgit2#language-bindings "libgit2-bindings"
-  [21fa2960]: https://github.com/mojombo/grit/ "Grit Gem"
-  [5c4dd6b1]: https://github.com "Github"
-  [c30c4e2e]: https://www.sourcetreeapp.com "Source Tree"
