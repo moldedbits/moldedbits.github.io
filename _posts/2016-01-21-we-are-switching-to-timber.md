@@ -14,6 +14,7 @@ Timber automagically assigns TAG to a log statement. By default, it is filename 
 Timber.d("This is a debug log”);
 // Custom TAG
 Timber.tag("CustomTag").d("Debug log with custom tag”);
+{% endhighlight %}
 
 ### Custom Behaviours
 Developer can add custom logging engines(called Trees) for custom logging. Timber ships with a default logging behaviour class DebugTree. These Trees can be installed conditionally
