@@ -104,9 +104,11 @@ public void unsubscribe() {
 Note that above functions can be called at runtime based on any rules that might apply. These rules can come from API, or they can be result of some other runtime operations.
 
 While there is some amount of work, it provides a flexible and scalable way of subscribing Otto events at runtime.
-I have created a [Demo App](https://github.com/abhishekBansal/OttoRuntime) on `github` to demonstrate this mechanism. There are three different models, each of different `ModelType`. Each model subscribe to events at runtime from `MainActivity` based on its type(I have kept things extremely simple here but these rules can be as complicated). There are 3 buttons in `MainActivity` each button emits an event which is captured by subscribed model and reflected in logs.
+[This Demo App](https://github.com/abhishekBansal/OttoRuntime) on `github` demonstrates this mechanism. There are three different models, each of these model subscribe to events at runtime from `MainActivity` based on certain rules(I have kept things extremely simple here but these rules can be as complicated).
+There are 3 buttons in `MainActivity`, each button emits an event which is captured by subscribed model and reflects it in logs. `MultiEventModel` shows that how this framework can even be used for subscribing to multiple events at runtime with little help from `Reflection`.
+
 Here is a class diagram from same repository to summarize everything
-<img src="/assets/images/otto-class-diagram.jpeg" alt="Class Diagram - Otto Runtime Subscriptions" style="width: 800px; margin: auto;"/>
+<img src="/assets/images/otto-class-diagram.png" alt="Class Diagram - Otto Runtime Subscriptions" style="width: 900px; margin: auto;"/>
 
 Here I have kept one `OttoEventDelegate` object in each `Model` for simplicity, but, A list can kept and handled as per use case. As many delegate objects can be added in that list enabling `Model` to subscribe to as many events at runtime.
 
