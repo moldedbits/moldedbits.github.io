@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Android Popup Window"
-date:   2016-09-29 11:11:11
+title:  "Correct PopupWindow initialization"
+date:   2016-09-29 6:50:00
 author: anuj
 categories: Technical Android
 ---
