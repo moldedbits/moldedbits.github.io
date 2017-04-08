@@ -21,7 +21,7 @@ Typically, there's four categories of tests,
 - User interface tests
 - Integration tests
 
-####Local Unit Testing
+#### Local Unit Testing
 
 Use this for parts of your code that have no dependency on the Android framework, or depend on something small that can be mocked.
 
@@ -193,7 +193,7 @@ public class LoginPresenterMockApiTest {
 ```
 Important thing to note here is the use of [ArgumentCaptor](http://site.mockito.org/mockito/docs/current/org/mockito/ArgumentCaptor.html). You can capture the arguments passed and call any method, pretty cool stuff!
 
-####Instrumented Unit tests
+#### Instrumented Unit tests
 There are, however, times when you need the Android jars in your tests. Fortunately, it is pretty darn simple as well. All you need to do is update your test runner, and place your test in the folder `src/androidTest/your/package`
 
 ```java
@@ -221,7 +221,7 @@ dependencies {
 }
 ```
 
-####Integration tests
+#### Integration tests
 
 Espresso makes it very easy to create an run integration tests for your code. Its just like writing a test script, you identify the view, perform an action, and optionally verify the result. We can create complex interactions, across multiple activities and fragments. Here is a simple example,
 
@@ -309,7 +309,7 @@ dependencies {
 }
 ```
 
-####Conclusion
+#### Conclusion
 
 With JUnit4 and Espresso, writing and running automated tests for Android is now simple and efficient. In a future post, we will demonstrate how we integrate testing in our continuous integration system.
 
