@@ -4,7 +4,6 @@ title:  "Accessing Git APIs in Ruby"
 date:   2015-09-15 11:11:11
 author: amit
 categories: Technical Ruby
-comments: true
 ---
 Without a doubt we all know that Git is one of the most famous version control system. Here at moldedbits we use [GitHub][5c4dd6b1] for each of our project. Some use git directly from command line, while other prefer GUI tools like [SourceTree][c30c4e2e].
 
@@ -229,7 +228,3 @@ The moldedbits Team
 [21fa2960]: https://github.com/mojombo/grit/ "Grit Gem"
 [5c4dd6b1]: https://github.com "GitHub"
 [c30c4e2e]: https://www.sourcetreeapp.com "Source Tree"
-
-{% if page.comments %}
-{% include disqus.html %}
-{% endif %}

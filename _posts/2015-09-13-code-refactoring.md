@@ -4,7 +4,6 @@ title:  "Code Refactoring"
 date:   2015-09-13 11:11:11
 author: aashish
 categories: Technical Android
-comments: true
 ---
 
 No one can argue about the importance of good code architecture and clean code. Every good programmer or a team of experienced developers gives special attention to these as they understand how much effect this has on product quality and their productivity. Our team at [moldedbits][moldedbits] is no exception.
@@ -91,7 +90,3 @@ The moldedbits Team
 [moldedbits]: http://moldedbits.com
 [clean-code]: http://moldedbits.github.io/assets/images/stack-en.png
 [process]: http://moldedbits.github.io/assets/images/process-en.png
-
-{% if page.comments %}
-{% include disqus.html %}
-{% endif %}

@@ -4,7 +4,6 @@ title:  "Correct PopupWindow initialization"
 date:   2016-09-29 6:50:00
 author: anuj
 categories: Technical Android
-comments: true
 ---
 In a recent application, I needed to use the PopupWindow on a screen. Simple enough. While development, I used the Nexus 6P running Android Nougat for testing and everything worked fine and dandy. The QA, however, reported that the Popup was not visible on Android 5.0 or 4.4.2 . After much trial and error, I found the trouble making code.
 
@@ -69,7 +68,3 @@ Why this worked on Nougat and not below is still a mystery to me, hopefully I wi
 Happy coding!
 
 The moldedbits Team
-
-{% if page.comments %}
-{% include disqus.html %}
-{% endif %}

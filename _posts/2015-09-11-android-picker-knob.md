@@ -4,7 +4,6 @@ title:  "Android Picker Knob"
 date:   2015-09-11 11:11:11
 author: anuj
 categories: Technical Android
-comments: true
 ---
 
 In a game we are building, we needed a custom widget that looks like the classic volume control knob.
@@ -221,7 +220,3 @@ The moldedbits Team
 [picker-knob-mathematics]: {{site.url}}/assets/images/picker-knob-mathematics.png
 [step1-screenshot]: {{site.url}}/assets/images/step1.png
 [picker-knob-java]: https://github.com/moldedbits/android-picker-knob/blob/master/pickerknob/src/main/java/com/moldedbits/pickerknob/PickerKnob.java
-
-{% if page.comments %}
-{% include disqus.html %}
-{% endif %}

@@ -4,7 +4,6 @@ title:  "Automated Testing for Android"
 date:   2016-11-10 23:03:00
 author: anuj
 categories: Technical Android
-comments: true
 ---
 
 Target Audience: Android developers
@@ -320,7 +319,3 @@ For this post, you can find the sample code on [GitHub](https://github.com/molde
 Happy coding!
 
 The moldedbits Team
-
-{% if page.comments %}
-{% include disqus.html %}
-{% endif %}
