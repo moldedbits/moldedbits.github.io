@@ -4,6 +4,7 @@ title:  "Runtime Subscriptions in Otto"
 date:   2016-07-08 06:51:59
 author: abhishek
 categories: Tech, Android
+comments: true
 ---
 One should strive for loosely coupled design in software development. [Otto](http://square.github.io/otto/) is great library for Android which keep objects loosely coupled but still allow them to communicate efficiently.
 
@@ -113,3 +114,7 @@ Here is a class diagram from same repository to summarize everything
 Here I have kept one `OttoEventDelegate` object in each `Model` for simplicity, but, A list can kept and handled as per use case. As many delegate objects can be added in that list enabling `Model` to subscribe to as many events at runtime.
 
 Happy Coding !!
+
+{% if page.comments %}
+{% include disqus.html %}
+{% endif %}

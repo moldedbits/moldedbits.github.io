@@ -4,6 +4,7 @@ title:  "Git recover"
 date:   2016-11-10 23:03:00
 author: anuj
 categories: Technical Git
+comments: true
 ---
 
 Over the weekend I worked on a small Android app. Since it was a small project and I was mostly working alone, I did not care to add version control. Once it was finished, I decided to push it to GitHub.
@@ -51,3 +52,7 @@ Small modifications to the script got all the resource files as well, and the da
 Happy coding!
 
 The moldedbits Team
+
+{% if page.comments %}
+{% include disqus.html %}
+{% endif %}

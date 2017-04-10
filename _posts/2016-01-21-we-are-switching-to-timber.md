@@ -4,6 +4,7 @@ title:  "We are switching to Timber for Android Logging"
 date:   2016-01-21 01:51:59
 author: abhishek
 categories: Tech, Android
+comments: true
 ---
 At [moldedbits](http:///www.moldedbits.com), we have decided to switch to [Timber](https://github.com/JakeWharton/timber) library over `android.util.Log`. `Timber` has following benefits over standard android logging
 
@@ -90,3 +91,7 @@ public class CrashlyticsTree extends Timber.Tree {
 
 Clearly its very easy to use and makes debugging more efficient.
 Happy Coding !!
+
+{% if page.comments %}
+{% include disqus.html %}
+{% endif %}

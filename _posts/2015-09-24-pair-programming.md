@@ -4,6 +4,7 @@ title:  "Strengthening the Case for Pair Programming"
 date:   2015-09-24 11:11:11
 author: aashish
 categories: Technical Android
+comments: true
 ---
 
 Issac Newton in one of his letters in 1676 [wrote](https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants)
@@ -24,3 +25,7 @@ We hope this will help your team as it has helped ours.
 Happy coding!
 
 The moldedbits Team
+
+{% if page.comments %}
+{% include disqus.html %}
+{% endif %}

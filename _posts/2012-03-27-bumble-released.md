@@ -4,6 +4,7 @@ title:  "Bumble Released."
 date:   2012-03-27 11:11:11
 author: anuj
 categories: Technical Android
+comments: true
 ---
 
 Yep, its finally out on the Android Market.
@@ -23,3 +24,7 @@ If you love Bumble, do spread the word. It means a lot to us.
 
 Cheers!  
 moldedbits
+
+{% if page.comments %}
+{% include disqus.html %}
+{% endif %}
