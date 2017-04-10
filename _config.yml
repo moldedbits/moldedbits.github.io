@@ -3,7 +3,6 @@ description: blog
 tagline: on mobile, code and 42
 meta_description: "moldedbits Blog"
 
-markdown: redcarpet
 highlighter: pygments
 logo: false
 paginate: 15
