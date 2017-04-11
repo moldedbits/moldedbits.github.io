@@ -61,7 +61,7 @@
 
         $("#header").click(function(){
            // navigate to new page
-            window.location.href = 'http://www.moldedbits.com';
+            window.location.href = 'http://moldedbits.com';
         });
 
     });
