@@ -3,7 +3,7 @@ description: blog
 tagline: on mobile, code and 42
 meta_description: "moldedbits Blog"
 
-highlighter: pygments
+highlighter: rouge
 logo: false
 paginate: 15
 baseurl: /
