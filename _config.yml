@@ -8,7 +8,7 @@ logo: false
 paginate: 15
 baseurl: /
 domain_name: 'http://moldedbits.github.io'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-92344727-4'
 
 # Details for the RSS feed generator
 url:            'http://moldedbits.github.io'
