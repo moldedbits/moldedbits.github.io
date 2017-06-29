@@ -49,7 +49,7 @@ new Argus.Builder()
         .build();
 {% endhighlight %}
 
-Getting started with Argus is easy, you can follow [this guide](https://github.com/moldedbits/argus-android/wiki/Getting-Started) to integrate it in your app now.
+Getting started with Argus is easy, you can follow [this guide](https://github.com/moldedbits/argus-android/wiki) to integrate it in your app now.
 
 #### What is next
 
