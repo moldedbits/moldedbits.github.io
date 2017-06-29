@@ -18,7 +18,7 @@ A few lines of code can get you a screen looking like,
 
 #### The motivation behind Argus
 
-At [moldedbits](http:///www.moldedbits.com), we do a lot of client projects. Be it an enterprise app, a social networking app or an app for a small business, most all apps need a user on-boarding flow, including login, registration forgot password. Having implemented almost similar flows across apps, we decided to abstract out the complexity into a separate library that could be reused.
+At [moldedbits](http:///www.moldedbits.com), we do a lot of client projects. Be it an enterprise app, a social networking app or an app for a small business, almost all apps need a user on-boarding flow, including login, registration forgot password. Having implemented almost similar flows across apps, we decided to abstract out the complexity into a separate library that could be reused.
 
 #### Integrating in your apps
 
@@ -26,7 +26,7 @@ We built `Argus` android to simplify our lives and to speed up app development. 
 
 Argus works with providers for features like Login/Signup/ForgotPassword. These `Providers` take care of all flow and functionality of the feature they are responsible for. `Argus` comes with built-in providers for Google, Facebook and Email login/signup. These are sufficient for most of the use cases, however, if they aren't enough for you, you can create your own custom provider.
 
-Argus is fully customizable and it adapts look and feel of your application. Its open source and free to use.
+Argus is fully customizable and it adapts look and feel of your application.
 
 A basic Argus configuration looks like
 
