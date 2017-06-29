@@ -6,8 +6,6 @@ author: abhishek
 categories: Technical Android
 ---
 
-#### What is Argus
-
 Argus is a customizable and extensible open source library that allows developers to quickly integrate user on-boarding flow for Android apps, including login, signup and forgot password screens.
 
 With in-built support for Google and Facebook login / signup, Argus makes it trivial to get up and running when starting with a new app.
