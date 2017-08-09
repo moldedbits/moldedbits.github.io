@@ -20,6 +20,20 @@ It is very simple to use, you just need to initialize R2D2 and call the encryptD
 
 For initializing you need to pass the context and a keyAlias. **It is highly recommended that you get the keyAlias either from the user (may be in form of pin) or from the api.**
 
+#### Gradle
+
+```compile 'com.moldedbits.r2d2:r2d2:1.0.1' ```
+
+#### Maven
+{% highlight java %}
+<dependency>
+  <groupId>com.moldedbits.r2d2</groupId>
+  <artifactId>r2d2</artifactId>
+  <version>1.0.1</version>
+  <type>pom</type>
+</dependency>
+{% endhighlight %}
+
 ##### Initializing R2D2
 {% highlight java %}
 R2D2 r2d2 = new R2D2(context, keyAlias);
@@ -58,6 +72,9 @@ For **android versions 23 and higher**, KeyGenParameterSpec API is used. Random 
 For **android versions 18 and higher and Pre M**, KeyPairGeneratorSpec API is used. This generates a Public/Private key pair just like RSA and is added to the KeyStore securely. Encrypting a block of text is performed with the Public key of the Key Pair, whereas decryption is performed using the Private Key of the Key Pair by retrieving the keys from the KeyStore.
 
 For **android versions 16 and higher and pre 18**, we are simply encrypting and decrypting the data. This is done by hashing the data with the hash value generated using the SHA-1 hash function. This cipher text is stored in the Preferences. To retrieve the secret information, the cipher text is converted to plain text using the hash value.
+
+#### Github link
+<a href = "https://github.com/moldedbits/r2d2">https://github.com/moldedbits/r2d2</a>
 
 Feel free to open pull requests, report issues or suggest enhancements.
 May the force be with you!
