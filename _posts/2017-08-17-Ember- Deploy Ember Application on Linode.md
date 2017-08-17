@@ -5,6 +5,7 @@ date:   2017-08-17 6:11:15
 author: shubham
 categories: Technical Ember
 ---
+*Note- Target audience for this article are those developers who are new to web development but have some experience in other technologies like mobile or desktop.*
 
 Welcome to the world of web applications. Now a days the frontend does not only consists of views and logic contained in javascripts, there is more to that. For example ember uses router, routes, controller, components, templates, views etc and encourages us to use the patterns which are good for maintainability and scalability. Apart from all this now we have to build the frontend app. So simple copy pasting of raw files does not work for deployment.
 
@@ -136,6 +137,10 @@ Restart the server
  ```sudo service apache2 restart```
 
 Congratulations on deploying your first ember website. May the force be with you.
+
+#### Useful links
+<https://www.linode.com/docs/websites/hosting-a-website>
+<https://guides.emberjs.com/v2.14.0/tutorial/deploying/>
 
 
 
