@@ -6,29 +6,37 @@ author: shubham
 categories: Technical Ember
 ---
 
-Welcome to the world of web applications.Now a days the frontend does not only consists of views and logic contained in javascripts, there is more to that. For example ember uses router, routes, controller, components, templates, views etc and encourages us to use the patterns which are good for maintainability and scalability. Apart from all this now we have to build the frontend app. So simple copy pasting of raw files does not work for deployment.
+Welcome to the world of web applications. Now a days the frontend does not only consists of views and logic contained in javascripts, there is more to that. For example ember uses router, routes, controller, components, templates, views etc and encourages us to use the patterns which are good for maintainability and scalability. Apart from all this now we have to build the frontend app. So simple copy pasting of raw files does not work for deployment.
 
 #### Building Ember application 
 For building an ember application we just need to run a command in root folder of our application.
- ``` ember build ```
- You can also build an ember application for a specific environment like production or development by specifying a flag
- ``` ember build —environment=production```
- That’s it, your ember application is built and all the generated files are in the **dist** folder in the root folder of your application.
 
- #### Deploying 
- For deploying application on Linode (Apache server) we need to copy **dist** folder on server. For this we will use **scp**.
- But there might me two or more websites hosted on a single server so first we will create a folder with the name of our website in /var/www/html.
+ ``` ember build ```
+
+You can also build an ember application for a specific environment like production or development by specifying a flag
+
+ ``` ember build —environment=production```
+
+That’s it, your ember application is built and all the generated files are in the **dist** folder in the root folder of your application.
+
+#### Deployment
+For deploying application on Linode (Apache server) we need to copy **dist** folder on server. For this we will use **scp**.
+But there might me two or more websites hosted on a single server so first we will create a folder with the name of our website in /var/www/html.
 
 For this we need to ssh the server. Open a new tab in your terminal and enter - 
+
 ```ssh user-name@ip_address``` 
+
 (Replace the user-name with your username and ip_address with the ip address of the server.)
 This will prompt you for the password, enter your password and now we are ready to make changes in our server.
 
 First we will create the folder in which our website will be copied.
+
 ```sudo mkdir /var/www/html/example.com```
+
 (Replace example.com with your website name.)
 
-Now we need to create 3 folders in this example.com for storing our website, for logs and backups.
+Now we need to create 3 folders in this example.com for storing website, logs and backups.
 
 {% highlight java %}
 sudo mkdir -p /var/www/html/example.com/public_html
@@ -47,6 +55,7 @@ First create a folder in the root of your server
 ```sudo mkdir public_html```
 
 Now go back to your local directory in terminal and  scp into this public_html folder
+
 ```scp -r dist/* user-name@ip_address:public_html```
 
 Copy the content of this public_html folder to  /var/www/html/example.com/public_html
@@ -98,15 +107,18 @@ Vim editor will open and you can edit it by typing “i”. Copy the below text
 </VirtualHost>
 {% endhighlight %}
 
-and replace example.com with your website name. Save and quit the vim editor by pressing **esc** and typing :wq and enter.
+and replace example.com with your website name. Save and quit the vim editor by pressing **esc** and typing **:wq** and enter.
 
 Enable the new website
+
 ```sudo a2ensite /etc/apache2/sites-available/example.com.conf```
 
 Next we need to add few lines to ~/etc/apache2/apache2.conf so that server can detect our .htaccess file in the root folder of our website.
 
 Open the config file
+
 ```sudo vim ~/etc/apache2/apache2.conf```
+
 and add these lines
 
 {% highlight java %}
@@ -115,14 +127,15 @@ and add these lines
         AllowOverride All
         Require all granted
 </Directory>
-{% highlight java %}
+{% endhighlight %}
 
-Everything is set we just need to restart the server and associate the ip address of your server with the domain name that you can do using 
+Everything is set ,we just need to restart the server and associate the ip address of your server with the domain name.
 
 Restart the server
+
  ```sudo service apache2 restart```
 
-Congratulations on deploying your first ember website.
+Congratulations on deploying your first ember website. May the force be with you.
 
 
 
