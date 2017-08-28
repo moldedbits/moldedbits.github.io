@@ -5,6 +5,8 @@ date:   2017-08-28 11:11:11
 author: amit
 categories: Technical iOS
 ---
+![Strongly Typed]({{ site.url }}/assets/images/strongly-typed-300x210.png)
+
 Dealing with [NotificationCenter](https://developer.apple.com/documentation/notificationcenter) is daily task for all iOS developers. Either it's a system notification such as [KeyboardShow/KeyboardHide](https://developer.apple.com/library/content/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html) or CustomNotification to post some information app wide, we all have used Notifications.
 
 ### Yeah, So. Do you have something interesting to say?
