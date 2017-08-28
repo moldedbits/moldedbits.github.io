@@ -5,8 +5,6 @@ date:   2017-08-28 11:11:11
 author: amit
 categories: Technical iOS
 ---
-![Strongly Typed]({{ site.url }}/assets/images/strongly-typed-300x210.png)
-
 Dealing with [NotificationCenter](https://developer.apple.com/documentation/notificationcenter) is daily task for all iOS developers. Either it's a system notification such as [KeyboardShow/KeyboardHide](https://developer.apple.com/library/content/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html) or CustomNotification to post some information app wide, we all have used Notifications.
 
 ### Yeah, So. Do you have something interesting to say?
@@ -48,6 +46,8 @@ func deregisterFromKeyboardNotifications(){
 We write this same code again and again or we create a `BaseViewController` and have these defined or maybe a `UIViewController` extension. But all of these are still not efficient as you have to dig into `notification.userInfo` dictionary to get relevant information.
 
 ### Typed Notificaion
+
+![Strongly Typed]({{ site.url }}/assets/images/strongly-typed-300x210.png)
 
 We want to define notifications in such a way, where we can definitively get the data from our notification observer (strongly typed), not a userInfo dictionary. This way we will enforce swift type system to help us writing type safe and bug free code. In this process we will also redefine how we observe our notification to make our code `DRY`.
 
