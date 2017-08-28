@@ -16,7 +16,7 @@ Well, answer to that question is, Yes. Today We are gonna discuss notification p
 
 In Swift we focus on writing all the APIs in strongly typed manner, then why not same with Notifications? Let's see an example of default way of doing notification handling.
 
-```Swift
+{% highlight swift %}
 // Registering system notification for keyboardShow and keyboardHide
 func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -41,7 +41,7 @@ func deregisterFromKeyboardNotifications(){
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 }
-```
+{% endhighlight %}
 
 We write this same code again and again or we create a `BaseViewController` and have these defined or maybe a `UIViewController` extension. But all of these are still not efficient as you have to dig into `notification.userInfo` dictionary to get relevant information.
 
@@ -53,7 +53,7 @@ We want to define notifications in such a way, where we can definitively get the
 
 To create typed notification we can first define an `NotificationDescriptor` struct.
 
-```Swift
+{% highlight swift %}
 struct NotificationDescriptor<A> {
     //Name of the notification
     let name: Notification.Name
@@ -61,13 +61,13 @@ struct NotificationDescriptor<A> {
     //Method to convert notification.userInfo to desired type
     let convert: (Notification) -> A
 }
-```
+{% endhighlight %}
 
 With help of Swift's Generic type we can use above Struct for all type of notification and describe our notifications using this.
 
 Next we can extend `NotificationCenter` to provide us an convenience method over default `addObserver` method.
 
-```Swift
+{% highlight swift %}
 extension NotificationCenter {
     func addObserver<A>(forDescriptor d: NotificationDescriptor<A>, using block: @escaping (A) -> ()) {
         addObserver(forName: d.name, object: nil, queue: nil, using: { notification in
@@ -75,11 +75,11 @@ extension NotificationCenter {
         })
     }
 }
-```
+{% endhighlight %}
 
 But there is one thing missing in above implementation. We have added the observer but we are ignoring the token received from `addObserver` method. Without this token we won't be able to deregister the notification. For this purpose we can define a `Token` class.
 
-```Swift
+{% highlight swift %}
 class Token {
     let center: NotificationCenter
     let token: NSObjectProtocol
@@ -93,11 +93,11 @@ class Token {
         center.removeObserver(token)
     }
 }
-```
+{% endhighlight %}
 
 And redefine out `addObserver` method this way:-
 
-```Swift
+{% highlight swift %}
 extension NotificationCenter {
     func addObserver<A>(forDescriptor d: NotificationDescriptor<A>, using block: @escaping (A) -> ()) -> Token {
         let t = addObserver(forName: d.name, object: nil, queue: nil, using: { notification in
@@ -106,7 +106,7 @@ extension NotificationCenter {
         return Token(token: t, center: self)
     }
 }
-```
+{% endhighlight %}
 
 We can store the `Token` returned by above function as a ViewController property, and as soon as ViewController's `deinit` gets called, `Token` will also gets destroyed and notification gets deregistered.
 
@@ -114,7 +114,7 @@ We can store the `Token` returned by above function as a ViewController property
 
 We will define KeyboardShow and Keyboard hide notification using our `NotificationDescriptor`.
 
-```Swift
+{% highlight swift %}
 let keyboardShowNotification = NotificationDescriptor<A>(name: Notification.Name.UIKeyboardWillShow, convert: { notification in
   // Here we can parse the userInfo into our desired type
 })
@@ -123,24 +123,24 @@ let keyboardHiderNotification = NotificationDescriptor<KeyboardPayload>(name: No
   // Here we can parse the userInfo into our desired type
 })
 
-```
+{% endhighlight %}
 
 Let's define a struct with info we require from keyboard notification using [KeyboardNotificationKeys](https://developer.apple.com/documentation/uikit/uiwindow/keyboard_notification_user_info_keys).
 
-```Swift
+{% highlight swift %}
 struct KeyboardData {
     let beginFrame: CGRect
     let endFrame: CGRect
     let curve: UIViewAnimationCurve? //If we want to use it to synchronize our animation
     let duration: TimeInterval
 }
-```
+{% endhighlight %}
 
 We can also define an initializer to our `KeyboardData` which take notification and instantiate `KeyboardData`. This can be used as our convert function and we don't have to redefine convert for KeyboardShow and KeyboardHide.
 
 This is also the most important part of our `Type-Safe Notification`. As now we will have strictly defined data in our application and all the parsing logic is separated out for easy debugging and testing.
 
-```Swift
+{% highlight swift %}
 extension KeyboardData {
     init(note: Notification) {
         guard let userInfo = note.userInfo else {
@@ -158,16 +158,16 @@ extension KeyboardData {
         self.duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
     }
 }
-```
+{% endhighlight %}
 
 `KeboardShowDescriptor` and `KeyboardHideDescriptor` will become
 
-```Swift
+{% highlight swift %}
 struct SystemNotification {
     static let keyboardShowNotification = NotificationDescriptor<KeyboardData>(name: Notification.Name.UIKeyboardWillShow, convert: KeyboardData.init)
     static let keyboardHiderNotification = NotificationDescriptor<KeyboardData>(name: Notification.Name.UIKeyboardWillHide, convert: KeyboardData.init)
 }
-```
+{% endhighlight %}
 
 We have also encapsulated these properties in `SystemNotification` struct, so that our global namespace doesn't get polluted with all different types of notification descriptors.
 
@@ -175,7 +175,7 @@ We have also encapsulated these properties in `SystemNotification` struct, so th
 
 As we have these properties already define, using in a UIViewController will become very simple and we don't have to track the notification for deregister.
 
-```Swift
+{% highlight swift %}
 private var keyboardShowToken: Token?
 private var keyboardHideToken: Token?
 
@@ -194,7 +194,7 @@ func registerForKeyboardNotifications() {
             //Custom logic related to view only
         }
     }
-```
+{% endhighlight %}
 
 This way we are also freeing up our UIViewController from other logic and only allowing it to handle views. This is also highly reusable as all the repetitive code is moved to a single place and this makes our code `DRY`.
 
