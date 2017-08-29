@@ -6,7 +6,7 @@ meta_description: "moldedbits Blog"
 highlighter: rouge
 logo: false
 paginate: 15
-baseurl: /
+baseurl: 'http://moldedbits.github.io'
 domain_name: 'http://moldedbits.github.io'
 google_analytics: 'UA-92344727-4'
 
