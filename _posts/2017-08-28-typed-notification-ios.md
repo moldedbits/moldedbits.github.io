@@ -9,7 +9,7 @@ Dealing with [NotificationCenter](https://developer.apple.com/documentation/noti
 
 ### Yeah, So. Do you have something interesting to say?
 
-Well, answer to that question is, Yes. Today We are gonna discuss notification programming in such a way, that it will become as easy as eating an apple pie. (I don't think anyone can deny it, eating an apple pie is just so satisfying, obviously if you love apple pie in first place ;p )
+Well, answer to that question is, Yes. Today, we are gonna discuss notification programming in such a way, that it will become as easy as eating an apple pie. (I don't think anyone can deny it, eating an apple pie is just so satisfying, obviously if you love apple pie in first place ;p )
 
 
 ### Old way of handling notification
@@ -49,9 +49,11 @@ We write this same code again and again or we create a `BaseViewController` and 
 
 ![Strongly Typed]({{ site.url }}/assets/images/strongly-typed.png)
 
-We want to define notifications in such a way, where we can definitively get the data from our notification observer (strongly typed), not a userInfo dictionary. This way we will enforce swift type system to help us writing type safe and bug free code. In this process we will also redefine how we observe our notification to make our code `DRY`.
+We want to define notifications in such a way, where we can definitively get the data from our notification observer (strongly typed), not a userInfo dictionary. This way we will enforce swift type system to help us writing type safe and bug free code. In this process we will also redefine how we observe our notification to make our code `DRY`[(don't repeat yourself)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
-To create typed notification we can first define an `NotificationDescriptor` struct.
+To create typed notification we can first define an `NotificationDescriptor` struct. Our `NotificationDescriptor` will have two properties,
+1. `name` defining unique notification name
+2. `convert` closure, which help us extract out data from Notification.userInfo
 
 {% highlight swift %}
 struct NotificationDescriptor<A> {
@@ -63,9 +65,9 @@ struct NotificationDescriptor<A> {
 }
 {% endhighlight %}
 
-With help of Swift's Generic type we can use above Struct for all type of notification and describe our notifications using this.
+With help of Swift's Generic type we can use above Struct for all type of notifications and describe our notifications using this.
 
-Next we can extend `NotificationCenter` to provide us an convenience method over default `addObserver` method.
+Next we can extend `NotificationCenter` to provide us a convenience method over default `addObserver` method.
 
 {% highlight swift %}
 extension NotificationCenter {
@@ -95,7 +97,7 @@ class Token {
 }
 {% endhighlight %}
 
-And redefine out `addObserver` method this way:-
+And redefine our `addObserver` method this way:-
 
 {% highlight swift %}
 extension NotificationCenter {
@@ -108,18 +110,18 @@ extension NotificationCenter {
 }
 {% endhighlight %}
 
-We can store the `Token` returned by above function as a ViewController property, and as soon as ViewController's `deinit` gets called, `Token` will also gets destroyed and notification gets deregistered.
+We can store the `Token` returned by above function as a ViewController property, when ViewController's `deinit` gets called, `Token` will also gets destroyed and notification gets deregistered.
 
 ### How to use it
 
-We will define KeyboardShow and Keyboard hide notification using our `NotificationDescriptor`.
+We will define KeyboardShow and KeyboardHide notification using our `NotificationDescriptor`.
 
 {% highlight swift %}
 let keyboardShowNotification = NotificationDescriptor<A>(name: Notification.Name.UIKeyboardWillShow, convert: { notification in
   // Here we can parse the userInfo into our desired type
 })
 
-let keyboardHiderNotification = NotificationDescriptor<KeyboardPayload>(name: Notification.Name.UIKeyboardWillHide, convert: convert: { notification in
+let keyboardHideNotification = NotificationDescriptor<KeyboardPayload>(name: Notification.Name.UIKeyboardWillHide, convert: convert: { notification in
   // Here we can parse the userInfo into our desired type
 })
 
@@ -138,7 +140,7 @@ struct KeyboardData {
 
 We can also define an initializer to our `KeyboardData` which take notification and instantiate `KeyboardData`. This can be used as our convert function and we don't have to redefine convert for KeyboardShow and KeyboardHide.
 
-This is also the most important part of our `Type-Safe Notification`. As now we will have strictly defined data in our application and all the parsing logic is separated out for easy debugging and testing.
+This is also the most important part of our `Type-Safe Notification`. We will have strictly defined data in our application and all the parsing logic is separated out for easy debugging and testing.
 
 {% highlight swift %}
 extension KeyboardData {
@@ -165,7 +167,7 @@ extension KeyboardData {
 {% highlight swift %}
 struct SystemNotification {
     static let keyboardShowNotification = NotificationDescriptor<KeyboardData>(name: Notification.Name.UIKeyboardWillShow, convert: KeyboardData.init)
-    static let keyboardHiderNotification = NotificationDescriptor<KeyboardData>(name: Notification.Name.UIKeyboardWillHide, convert: KeyboardData.init)
+    static let keyboardHideNotification = NotificationDescriptor<KeyboardData>(name: Notification.Name.UIKeyboardWillHide, convert: KeyboardData.init)
 }
 {% endhighlight %}
 
@@ -173,7 +175,7 @@ We have also encapsulated these properties in `SystemNotification` struct, so th
 
 ### UIViewController usage
 
-As we have these properties already define, using in a UIViewController will become very simple and we don't have to track the notification for deregister.
+Having different notification with respective descriptor defined at a central place, using these in a UIViewController is very simple and we don't have to track the notification for deregister.
 
 {% highlight swift %}
 private var keyboardShowToken: Token?
@@ -185,6 +187,7 @@ override func viewDidLoad() {
     registerForKeyboardNotifications()
 }
 
+// MARK: Register keyboardShow and keyboardHide notification for this UIViewController keeping reference to respective tokens
 func registerForKeyboardNotifications() {
         keyboardShowToken = NotificationCenter.default.addObserver(descriptor: SystemNotification.keyboardShowNotification) { keyboardData in
           //Custom logic related to view only
@@ -196,9 +199,9 @@ func registerForKeyboardNotifications() {
     }
 {% endhighlight %}
 
-This way we are also freeing up our UIViewController from other logic and only allowing it to handle views. This is also highly reusable as all the repetitive code is moved to a single place and this makes our code `DRY`.
+This way we are also freeing up our UIViewController from other logic and only allowing it to handle views. This is also highly reusable, all the repetitive code is moved to a single place and this makes our code `DRY`.
 
-For MVVM architecture above implementation fits perfect, as in MVVM a viewController should only handle view related logic only.
+For [MVVM](https://www.objc.io/issues/13-architecture/mvvm/) architecture above implementation fits perfect, a viewController should only handle view related logic only.
 
 ### Inspiration
 
