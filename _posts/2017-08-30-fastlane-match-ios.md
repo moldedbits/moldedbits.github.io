@@ -9,7 +9,7 @@ categories: Technical iOS
 [iOS certificates and Provisioning profiles](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html), most avoided topic for all iOS developer, specially for all the beginners out there. From iOS 10 onwards signing is required, even for development build and running your application on simulator and devices. So it becomes very important for us to know how to manage our Certificates and Provisioning profiles.
 
 ### Single Developer / Single Project
-If you are a single developer or working alone on a project and have your own apple developer account which you use for your development, you have nothing to worry about. Xcode8 introduced `[Automatic Manage Signing](https://developer.apple.com/library/content/qa/qa1814/_index.html)` option. With this option enabled all your certificates and profiles are managed by Xcode itself and it just work perfect.
+If you are a single developer or working alone on a project and have your own apple developer account which you use for your development, you have nothing to worry about. Xcode8 introduced [Automatic Manage Signing](https://developer.apple.com/library/content/qa/qa1814/_index.html) option. With this option enabled all your certificates and profiles are managed by Xcode itself and it just work perfect.
 
 ### Team / Multiple Project
 If you are working in a team on a project then these are the options you have for Certificates and Provisioning profile management :-
@@ -20,7 +20,7 @@ If you are working in a team on a project then these are the options you have fo
 
 ![Fastlane]({{ site.url }}/assets/images/fastlane_text.png)
 
-As we all know, in last couple of year `[Fastlane](https://github.com/fastlane/fastlane/tree/master/fastlane)` toolchain took us all with surprise and made all developers life cool again. Today, we are going to talk about specific tool from `fastlane` toolset, `Match`.
+As we all know, in last couple of year [Fastlane](https://github.com/fastlane/fastlane/tree/master/fastlane) toolchain took us all with surprise and made all developers life cool again. Today, we are going to talk about specific tool from `fastlane` toolset, `Match`.
 
 ### What is Match?
 
@@ -46,7 +46,7 @@ Before getting started we have to :-
 1. If you have existing Certificates and profiles on this account, you should consider using `match nuke`
 
     To clean existing certificates and profiles(with caution):-
-    `fasltane match nuke` // Only for first time, when setting up match
+    `fasltane match nuke //Only for first time, when setting up match`
 
 2. Go to your project root folder and run `fastlane match init`, this will create a  `Matchfile` in fastlane folder (assuming you are already using fastlane)
 3. You will be asked for your git repo url, you created earlier and your `Matchfile` will have this content :-
