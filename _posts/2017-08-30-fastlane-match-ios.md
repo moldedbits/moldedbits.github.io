@@ -46,6 +46,7 @@ Before getting started we have to :-
 1. If you have existing Certificates and profiles on this account, you should consider using `match nuke`
 
     To clean existing certificates and profiles(with caution):-
+
     `fasltane match nuke //Only for first time, when setting up match`
 
 2. Go to your project root folder and run `fastlane match init`, this will create a  `Matchfile` in fastlane folder (assuming you are already using fastlane)
