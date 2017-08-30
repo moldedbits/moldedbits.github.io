@@ -18,7 +18,7 @@ If you are working in a team on a project then these are the options you have fo
 
 ### Fastlane to rescue
 
-![Fastlane](https://github.com/fastlane/fastlane/blob/master/fastlane/assets/fastlane_text.png)
+![Fastlane]({{ site.url }}/assets/images/fastlane_text.png)
 
 As we all know, in last couple of year `[Fastlane](https://github.com/fastlane/fastlane/tree/master/fastlane)` toolchain took us all with surprise and made all developers life cool again. Today, we are going to talk about specific tool from `fastlane` toolset, `Match`.
 
