@@ -48,6 +48,7 @@ We write this same code again and again or we create a `BaseViewController` and 
 ### Typed Notificaion
 
 ![Strongly Typed]({{ site.url }}/assets/images/strongly-typed.png)
+(Sorry, about the art being not so good. Tried to do my best. ;))
 
 We want to define notifications in such a way, where we can definitively get the data from our notification observer (strongly typed), not a userInfo dictionary. This way we will enforce swift type system to help us writing type safe and bug free code. In this process we will also redefine how we observe our notification to make our code `DRY`[(don't repeat yourself)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
