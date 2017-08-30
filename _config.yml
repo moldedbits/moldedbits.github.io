@@ -13,4 +13,4 @@ google_analytics: 'UA-92344727-4'
 # Details for the RSS feed generator
 url:            'http://moldedbits.github.io'
 author:         'Anuj Middha'
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
