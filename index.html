@@ -49,6 +49,7 @@ about: 'about.html'
                   alt="profile" nopin="nopin" />
                 {{ author.name }}
             {% endif %}
+            . {{ post.content | reading_time_as_i }} read
             {% if post.categories.size > 0 %}
                 {{ post.categories | array_to_sentence_string | prepend: 'on ' }}
             {% endif %}
