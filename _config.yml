@@ -6,11 +6,11 @@ meta_description: "moldedbits Blog"
 highlighter: rouge
 logo: false
 paginate: 15
-baseurl: 'http://moldedbits.github.io'
-domain_name: 'http://moldedbits.github.io'
+baseurl: 'http://eng.moldedbits.com/'
+domain_name: 'eng.moldedbits.com'
 google_analytics: 'UA-92344727-4'
 
 # Details for the RSS feed generator
-url:            'http://moldedbits.github.io'
+url:            'http://eng.moldedbits.com'
 author:         'Anuj Middha'
 plugins: [jekyll-paginate]
