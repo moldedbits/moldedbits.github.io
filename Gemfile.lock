@@ -168,9 +168,6 @@ GEM
       jekyll (>= 3.0)
     kramdown (1.13.2)
     liquid (4.0.0)
-    liquid_reading_time (1.1.3)
-      liquid (>= 2.6, < 5.0)
-      nokogiri (~> 1.6)
     listen (3.0.6)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
@@ -215,7 +212,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  liquid_reading_time
 
 BUNDLED WITH
-   1.15.4
+   1.14.6
