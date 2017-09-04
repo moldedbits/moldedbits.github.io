@@ -76,10 +76,10 @@ The currently executing tasks run on distinct threads that are managed by the di
 #### Main Queue
 ##### Submitting a task to the main queue asynchronously
 
-```swift
-  DispatchQueue.main.async {
-        perform some task on main thread
-  }
+```
+    DispatchQueue.main.async {
+          perform some task on main thread
+    }
 ```
 
 Since, the task is submitted to the main queue asynchronously, so the calling thread won’t wait for the completion for submitted task and will return immediately.
