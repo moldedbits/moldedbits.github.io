@@ -76,64 +76,67 @@ The currently executing tasks run on distinct threads that are managed by the di
 #### Main Queue
 ##### Submitting a task to the main queue asynchronously
 
+```swift
+  DispatchQueue.main.async {
+        perform some task on main thread
+  }
+```
 
 Since, the task is submitted to the main queue asynchronously, so the calling thread won’t wait for the completion for submitted task and will return immediately.
 
 ##### Submitting a task to the main queue asynchronously that will be executed after some delay
 
-{% highlight swift %}
+```swift
   DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
        //task to be performed on main thread after 1 second of submission
   }
-{% endhighlight %}
+```
 
 #### Global Concurrent Queue
 
-{% highlight swift %}
+```swift
 DispatchQueue.global(qos: .utility).async {
     // Asynchronous code running on the low priority queue
 }
-{% endhighlight %}
 
-{% highlight swift %}
 DispatchQueue.global(qos: .userInitiated).sync {
     // Synchronous code running on the high prioriy queue
 }
-{% endhighlight %}
+```
 
 ### Working with custom queue
 
 ##### Custom Serial Queue
 
-{% highlight swift %}
+```swift
 let customSerialQueue = DispatchQueue(label: "com.appName.myCustomSerialQueue")
 customSerialQueue.async {
     // Code
 }
-{% endhighlight %}
+```
 
 ##### Custom Concurrent Queue
-{% highlight swift %}
+```swift
 let customConcurrentQueue = DispatchQueue(label: "com.appName.myCustomConcurrentQueue", attributes: .concurrent)
 customConcurrentQueue.async {
     // Code
 }
-{% endhighlight %}
+```
 
 #### Performing background tasks and then updating the UI
 
-{% highlight swift %}
+```swift
 DispatchQueue.global(qos: .background).async {
     // Do some background work
     DispatchQueue.main.async {
         // Update the UI to indicate the work has been completed
     }
 }
-{% endhighlight %}
+```
 
 #### Be careful of deadlocks with serial queues
 
-{% highlight swift %}
+```swift
 let customSerialQueue = DispatchQueue(label: "com.appName.myCustomSerialQueue")
 
 customSerialQueue.sync {
@@ -142,18 +145,18 @@ customSerialQueue.sync {
         // This code will never be executed and the app is now in deadlock
     }
 }
-{% endhighlight %}
+```
 
 ##### Beware of submitting task synchronously on the main thread from another thread
 
-{% highlight swift %}
+```swift
 DispatchQueue.global(qos: .utility).sync {
     // Background Task
     DispatchQueue.main.sync {
         // App will crash
     }
 }
-{% endhighlight %}
+```
 
 ### Inspiration
 
