@@ -16,7 +16,7 @@ Managing threads in an application that uses threads extensively can sometimes b
 
 
 ## Dispatch Queue
-The dominating concept in `GCD` is the `DispatchQueue`.
+The dominating concept in `GCD` is the [DispatchQueue](https://developer.apple.com/library/content/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationQueues/OperationQueues.html).
 - Tasks (in the form of blocks of code) are submitted to dispatch queues that execute them in FIFO order guaranteeing that the queue that comes first for execution will also start first.
 - These dispatch queues execute the tasks serially or concurrently depending on their type- Serial or Concurrent.
 
