@@ -39,7 +39,7 @@ build.gradle	gradle			gradlew.bat		    version.properties
 ```
 With this we can import the project into Android Studio
 
-![Android Studio][studio-screenshot]
+<img src="/assets/images/android-studio-import.png" alt="Studio Import" style="width: 350px; margin:auto;"/>
 
 This is our base project all setup. Some of the features already implemented by this are,
 
@@ -96,11 +96,8 @@ And finally, we add the Argus activity to AndroidManifest.xml
 ```
 And that is all. With this, we have setup an app with all the dependencies and scaffolding setup to get the developer started straight on the business logic of the app, and a basic login framework.
 
-![Demo Login][login-screenshot]
+<img src="/assets/images/jump-demo-login.png" alt="Demo Login" style="width: 300px; margin:auto;"/>
 
 Happy coding!
 
 The moldedbits Team
-
-[studio-screenshot]: {{site.url}}/assets/images/android-studio-import.png "Android Studio Import"
-[login-screenshot]: {{site.url}}/assets/images/jump-demo-login.png "Demo Login"
