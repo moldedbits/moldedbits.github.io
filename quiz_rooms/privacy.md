@@ -19,7 +19,7 @@ We do not sell, trade, or otherwise transfer to outside parties your personally 
 
 If there are any questions regarding this privacy policy you may contact us using the information below.
 
-moldedbits
-Anuj Middha
+moldedbits  
+Anuj Middha  
 [anuj@moldedbits.com](mailto:anuj@moldedbits.com)  
 India
